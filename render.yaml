@@ -2,5 +2,5 @@ services:
   - type: web
     name: typing-speed-chat
     env: node
-    buildCommand: npm run build
-    startCommand: node server.js
+    buildCommand: ./render-build.sh
+    startCommand: node dist/server.js

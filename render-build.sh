@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
+# Exit on error
+set -o errexit
 
 # Build the application
 npm run build
 
-# Make sure the _redirects file exists
-echo "/* /index.html 200" > dist/public/_redirects
+# Ensure output directory exists
+mkdir -p dist/public
 
-# Exit with success
-exit 0
+# Copy server.js to dist for deployment
+cp server.js dist/
+
+# Copy test page to public directory
+cp test.html dist/public/
+
+# Log the directory structure to debug
+echo "Directory structure:"
+find dist -type f | sort
