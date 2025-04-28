@@ -3,7 +3,7 @@ services:
     name: typing-speed-chat
     env: static
     buildCommand: npm run build
-    staticPublishPath: ./dist/public
+    staticPublishPath: ./dist
     routes:
       - type: rewrite
         source: /*
